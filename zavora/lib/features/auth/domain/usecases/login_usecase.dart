@@ -1,0 +1,19 @@
+import 'package:fpdart/fpdart.dart';
+import 'package:injectable/injectable.dart';
+import '../../../../core/errors/failures.dart';
+import '../entities/user_entity.dart';
+import '../repositories/i_auth_repository.dart';
+
+@lazySingleton
+class LoginUseCase {
+  final IAuthRepository repository;
+
+  LoginUseCase(this.repository);
+
+  Future<Either<Failure, UserEntity>> call({
+    required String email,
+    required String password,
+  }) {
+    return repository.login(email: email, password: password);
+  }
+}

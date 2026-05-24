@@ -1,0 +1,57 @@
+name: zavora
+description: Clinical-grade healthcare platform — PT Zavora Life Internasional
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  # ── Remote Backend ─────────────────────────────────────
+  supabase_flutter: ^2.5.0      # Auth + DB + Realtime + Storage
+  dio: ^5.4.0                   # HTTP client for ZavoBot & external APIs
+
+  # ── Local Database ──────────────────────────────────────
+  isar: ^3.1.0                  # Local NoSQL DB (native AES encryption)
+  isar_flutter_libs: ^3.1.0     # Platform binaries
+  path_provider: ^2.1.0
+
+  # ── State Management & DI ──────────────────────────────
+  flutter_bloc: ^8.1.5
+  bloc: ^8.1.4
+  get_it: ^7.7.0
+  injectable: any
+
+  # ── Security & Encryption ──────────────────────────────
+  flutter_secure_storage: ^9.0.0  # iOS Keychain / Android Keystore
+  encrypt: ^5.0.3                 # AES-GCM-256 manual column encryption
+  local_auth: ^2.2.0              # Biometric (Face ID / Fingerprint)
+  pointycastle: ^3.9.0            # PBKDF2 key derivation
+
+  # ── Core Utilities ─────────────────────────────────────
+  uuid: ^4.3.3                    # RFC4122 UUID for offline entries
+  easy_localization: ^3.0.6       # Indonesian + English i18n
+  google_fonts: ^6.2.1            # Inter + Outfit fonts
+  flutter_local_notifications: ^17.1.2  # Medication reminders
+  connectivity_plus: ^6.0.3       # Network state detection
+  fpdart: ^1.1.0                  # Either<Failure, T> functional types
+
+  # ── UI Utilities ───────────────────────────────────────
+  cached_network_image: ^3.3.1
+  shimmer: ^3.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  isar_generator: ^3.1.0          # Isar schema code generation
+  injectable_generator: any    # DI code generation
+  build_runner: ^2.4.9
+  mocktail: ^1.0.3
+
+flutter:
+  uses-material-design: true
